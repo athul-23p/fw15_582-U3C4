@@ -1,0 +1,13 @@
+.article-details{
+    color: grey;
+    
+}
+
+img {
+    border-radius: 15px;
+    max-width: 80%;
+}
+
+#main a:hover{
+    color: red;
+}

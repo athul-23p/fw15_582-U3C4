@@ -3,11 +3,12 @@
     }
     #sidebar{
       flex:2;
-      border: 1px solid red;
+      border: 2px solid black;
+      border-radius: 9px;
       display: flex;
       flex-direction: column;
       padding: 10px;
-
+      margin-right: 10px;
     }
     #sidebar input{
       margin: 5px 0px;
@@ -15,7 +16,8 @@
     }
     #main{
       flex:8;
-      border: 1px solid red;
+      border: 2px solid black;
+      border-radius: 9px;
       padding: 20px;
      
     }
