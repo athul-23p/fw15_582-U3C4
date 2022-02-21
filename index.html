@@ -6,7 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
   </head>
+  <style>
+    #container{
+      display: flex;
+    }
+    #sidebar{
+      flex:2;
+      border: 1px solid red;
 
+    }
+    #main{
+      flex:8;
+      border: 1px solid red;
+      display: grid;
+      grid-template-columns: repeat(4,200px);
+      gap:20px;
+    }
+    #main img{
+      width: 100%;
+    }
+    .author{
+      color: grey;
+      font-size: 12px;
+    }
+  </style>
   <body>
     <div id="container">
       <div id="sidebar">
@@ -17,7 +40,26 @@
       <div id="main">
         <!--DO NOT CHANGE THIS ID's-->
         <!--Append top headlines from india here only-->
+        
       </div>
     </div>
   </body>
+  <script type="module">
+    import sidebar from './components/sidebar.js';
+    import  {apiCall,appendArticles} from './scripts/main.js';
+
+    document.getElementById('sidebar').innerHTML = sidebar();
+
+    let main = document.getElementById('main');
+    const url = 'https://shrouded-earth-23381.herokuapp.com/api/headlines/india';
+
+    let news = await apiCall(url);
+    console.log(news);
+
+    appendArticles(news,main);
+
+  </script>
 </html>
+<div>
+  
+</div>
