@@ -20,6 +20,10 @@
       color: grey;
       font-size: 12px;
     }
+    .description{
+      font-size: 12px;
+      border: 1px solid red;
+    }
   </style>
   <body>
     <div id="container">
@@ -48,6 +52,16 @@
     console.log(news);
 
     appendArticles(news,main);
+
+    document.getElementById('searchbar').addEventListener('keydown',(e) =>{
+      // console.log(e);
+      if(e.key == 'Enter'){
+        let term = document.getElementById('searchbar').value;
+        console.log(term);
+        localStorage.setItem('search-term',term);
+        window.location.href = './search.html';
+      }
+    })
 
   </script>
 </html>

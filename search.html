@@ -6,7 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
+  <style>
+    #main{
+      display: grid;
+      grid-template-columns: repeat(4,300px);
+      gap:20px;
+    }
+    #main img{
+      width: 100%;
+    }
 
+    .description{
+      font-size: 12px;
+      border: 1px solid red;
+    }
+  </style>
   <body>
     <div id="main">
       <!--No need to add sidebar here, directly display search results here only-->
@@ -14,4 +28,13 @@
       <!-- show headline, description and image -->
     </div>
   </body>
+  <script type="module">
+    import  {apiCall,appendArticles} from './scripts/main.js';
+    let main = document.getElementById('main');
+    let query = localStorage.getItem('search-term');
+    const url = ` https://shrouded-earth-23381.herokuapp.com/api/search/?q=${query}`
+
+    let news = await apiCall(url);
+    appendArticles(news,main);
+  </script>
 </html>

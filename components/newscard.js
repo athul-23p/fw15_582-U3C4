@@ -6,7 +6,7 @@ function newscard(news){
         <div class='card'>
             <img src='${urlToImage}'>
             <h5 class='title'>${title}</h5>
-         
+            <p class='description'>${description}</p>
             <p class='author'>${name}</p>
         </div>
     `;
