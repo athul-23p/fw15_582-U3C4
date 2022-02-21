@@ -11,7 +11,6 @@ async function apiCall(url) {
         console.log('error:',error)
     }
 
-
 }
 
 
@@ -21,7 +20,10 @@ function appendArticles(articles, main) {
     articles.forEach(article => {
         let div = document.createElement('div');
         div.innerHTML = newscard(article);
-
+        div.addEventListener('click',() =>{
+            localStorage.setItem('article',JSON.stringify(article));
+            window.location.href='news.html';
+        })
         main.append(div);
     })
 

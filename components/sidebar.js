@@ -2,7 +2,7 @@ function sidebar() {
 
     return `
     <a href="/">Home</a>
-    <a href="search.html">Search</a>
+    <input type='text' id='searchbar'>
     `;
 
     // return your html component here
