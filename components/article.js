@@ -20,7 +20,7 @@ function article(data){
         </div>
         <p class="content">${content}</p>
 
-        <a href="${url}">Readmore</a>
+        <a href="${url}">Read more</a>
     `;
 
 }

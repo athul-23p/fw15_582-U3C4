@@ -26,11 +26,20 @@
   <script type='module'>
     import sidebar from './components/sidebar.js';
     import {appendArticle} from './scripts/main.js';
-
+    import storeSearchTerm from './scripts/search.js';
     document.getElementById('sidebar').innerHTML = sidebar();
 
     let main = document.getElementById('main');
     let data = JSON.parse(localStorage.getItem('article'));
     appendArticle(data,main);
+
+    document.getElementById('searchbar').addEventListener('keydown',(e) =>{
+
+      if(e.key == 'Enter'){
+        let term = document.getElementById('searchbar').value;
+        storeSearchTerm(term);
+        window.location.href = './search.html';
+      }
+    });
   </script>
 </html>

@@ -10,7 +10,7 @@
   <style>
     #main{
        display: grid;
-      grid-template-columns: repeat(4,200px);
+      grid-template-columns: repeat(4,260px);
       gap:20px;
     }
     #main img{
@@ -22,7 +22,7 @@
     }
     .description{
       font-size: 12px;
-      border: 1px solid red;
+      /* border: 1px solid red; */
     }
   </style>
   <body>
@@ -42,6 +42,7 @@
   <script type="module">
     import sidebar from './components/sidebar.js';
     import  {apiCall,appendArticles} from './scripts/main.js';
+    import storeSearchTerm from './scripts/search.js';
 
     document.getElementById('sidebar').innerHTML = sidebar();
 
@@ -54,14 +55,13 @@
     appendArticles(news,main);
 
     document.getElementById('searchbar').addEventListener('keydown',(e) =>{
-      // console.log(e);
+
       if(e.key == 'Enter'){
         let term = document.getElementById('searchbar').value;
-        console.log(term);
-        localStorage.setItem('search-term',term);
+        storeSearchTerm(term);
         window.location.href = './search.html';
       }
-    })
+    });
 
   </script>
 </html>

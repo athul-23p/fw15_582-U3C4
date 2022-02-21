@@ -1,6 +1,6 @@
 function storeSearchterm(term) {
 
-
+localStorage.setItem("search-term", term);
 
 }
 
