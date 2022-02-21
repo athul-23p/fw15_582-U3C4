@@ -1,0 +1,15 @@
+  #container{
+      display: flex;
+    }
+    #sidebar{
+      flex:2;
+      border: 1px solid red;
+      display: flex;
+      flex-direction: column;
+
+    }
+    #main{
+      flex:8;
+      border: 1px solid red;
+     
+    }

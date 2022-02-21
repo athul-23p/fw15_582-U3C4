@@ -1,4 +1,5 @@
 import newscard from '../components/newscard.js';
+import article from '../components/article.js';
 
 async function apiCall(url) {
     //add api call logic here
@@ -29,4 +30,8 @@ function appendArticles(articles, main) {
 
 }
 
-export { apiCall, appendArticles }
+function appendArticle(data,main){
+    main.innerHTML = article(data);
+}
+
+export { apiCall, appendArticles ,appendArticle};
